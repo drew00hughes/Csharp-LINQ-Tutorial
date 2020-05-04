@@ -11,7 +11,11 @@ namespace Pokedex.Controllers
     {
         public ActionResult Home()
         {
-            return View();
+            using (PokedexEntities db = new PokedexEntities())
+            {
+                List<tblPokemon> list = db.tblPokemons.OrderBy(x => x.iNumber).ToList();
+                return View(list);
+            }
         }
     }
 }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PokedexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Pokedex.dbo.tblPokemon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblPokemon">
+    <Key>
+      <PropertyRef Name="iNumber" />
+      <PropertyRef Name="vcName" />
+      <PropertyRef Name="vcType" />
+      <PropertyRef Name="bTeam" />
+    </Key>
+    <Property Name="iNumber" Type="int" Nullable="false" />
+    <Property Name="vcName" Type="varchar(max)" Nullable="false" />
+    <Property Name="vcType" Type="varchar(max)" Nullable="false" />
+    <Property Name="bTeam" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PokedexModelStoreContainer">
+    <EntitySet Name="tblPokemon" EntityType="Self.tblPokemon" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblPokemon].[iNumber] AS [iNumber], 
+    [tblPokemon].[vcName] AS [vcName], 
+    [tblPokemon].[vcType] AS [vcType], 
+    [tblPokemon].[bTeam] AS [bTeam]
+    FROM [dbo].[tblPokemon] AS [tblPokemon]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

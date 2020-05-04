@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PokedexModelStoreContainer" CdmEntityContainer="PokedexEntities">
+    <EntitySetMapping Name="tblPokemons">
+      <EntityTypeMapping TypeName="PokedexModel.tblPokemon">
+        <MappingFragment StoreEntitySet="tblPokemon">
+          <ScalarProperty Name="iNumber" ColumnName="iNumber" />
+          <ScalarProperty Name="vcName" ColumnName="vcName" />
+          <ScalarProperty Name="vcType" ColumnName="vcType" />
+          <ScalarProperty Name="bTeam" ColumnName="bTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

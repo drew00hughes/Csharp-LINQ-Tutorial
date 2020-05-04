@@ -1,0 +1,24 @@
+﻿@model List<Pokedex.Models.tblPokemon>
+@{
+    ViewBag.Title = "Pokedex Home";
+}
+
+<h2>Pokedex</h2>
+
+<table class="table">
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>On Team?</th>
+    </tr>
+    @foreach (var pokemon in Model)
+    {
+        <tr>
+            <td class="number">#@pokemon.iNumber</td>
+            <td>@pokemon.vcName</td>
+            <td>@pokemon.vcType</td>
+            <td>@pokemon.bTeam</td>
+        </tr>
+    }
+</table>

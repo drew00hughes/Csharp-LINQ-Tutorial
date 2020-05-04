@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PokedexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblPokemon">
+    <Key>
+      <PropertyRef Name="iNumber" />
+      <PropertyRef Name="vcName" />
+      <PropertyRef Name="vcType" />
+      <PropertyRef Name="bTeam" />
+    </Key>
+    <Property Name="iNumber" Type="Int32" Nullable="false" />
+    <Property Name="vcName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="vcType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bTeam" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PokedexEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblPokemons" EntityType="Self.tblPokemon" />
+  </EntityContainer>
+</Schema>
