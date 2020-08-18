@@ -15,7 +15,7 @@ namespace Pokedex.Controllers
             {
                 List<tblPokemon> list = db.tblPokemons.ToList();
 
-                return View(list);
+                return View();
             }
         }
     }
